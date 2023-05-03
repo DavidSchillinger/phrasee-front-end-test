@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Button, Form, Input } from 'antd';
-import { useRootDispatch, useRootSelector } from '../store';
-import { loginUser } from '../store/user';
+import { useRootDispatch, useRootSelector } from '../../store';
+import { loginUser } from '../../store/user';
 import { requiredPasswordRule, requiredUsernameRule } from './form-rules';
 
 type AntdStore = { [key: string]: any }; // Antd doesn't seem to export this.

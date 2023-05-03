@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo } from 'react';
-import { fetchPatients, Patient } from '../store/patients';
+import { fetchPatients, Patient } from '../../store/patients';
 import './Patients.css';
 import { ascend, sortWith } from 'ramda';
-import { useRootDispatch, useRootSelector } from '../store';
+import { useRootDispatch, useRootSelector } from '../../store';
 
 export const PatientsRoute = (): JSX.Element => {
   const dispatch = useRootDispatch();
@@ -14,9 +14,9 @@ export const PatientsRoute = (): JSX.Element => {
 
   switch (state.status) {
     case 'loading':
-      return <article className="container">Loading patients...</article>;
+      return <p className="container">Loading patients...</p>;
     case 'failure':
-      return <article className="container">Failed to load patients.</article>;
+      return <p className="container">Failed to load patients.</p>;
     case 'success':
       return <Patients patients={state.patients} />;
   }

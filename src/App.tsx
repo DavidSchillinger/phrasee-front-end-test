@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import 'antd/dist/antd.css';
 import { useRootSelector } from './store';
-import { LoginRoute } from './pages/Login';
-import { PatientsRoute } from './pages/Patients';
+import { LoginRoute } from './pages/login';
+import { PatientsRoute } from './pages/patients';
 
 const Router = (): JSX.Element => {
   const route = useRootSelector((state) => state.router.route);
