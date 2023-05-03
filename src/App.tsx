@@ -48,7 +48,6 @@ const App = () => {
           </Form.Item>
         </Form>
       </main>
-      <footer></footer>
     </>
   );
 };
