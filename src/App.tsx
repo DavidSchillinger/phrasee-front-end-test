@@ -25,21 +25,24 @@ const App = () => {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <Form.Item label="Username" name="username">
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[{ required: true, message: 'Please provide a username!' }]}
+          >
             <Input size="large" />
           </Form.Item>
 
-          <Form.Item label="Password" name="password">
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[{ required: true, message: 'Please provide a password!' }]}
+          >
             <Input.Password size="large" />
           </Form.Item>
 
           <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              size="large"
-              disabled={1 > 0}
-            >
+            <Button type="primary" htmlType="submit" size="large">
               Log in
             </Button>
           </Form.Item>
