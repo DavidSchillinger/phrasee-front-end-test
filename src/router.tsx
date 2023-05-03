@@ -18,13 +18,13 @@ export const navigateToPatients = () => ({
   type: 'router/navigateToPatients' as const,
 });
 
-type Actions =
+export type RouterActions =
   | ReturnType<typeof navigateToLogin>
   | ReturnType<typeof navigateToPatients>;
 
 export function router(
   state: RouterState = initialState,
-  action: Actions
+  action: RouterActions
 ): RouterState {
   switch (action.type) {
     case 'router/navigateToLogin':
