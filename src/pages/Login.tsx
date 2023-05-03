@@ -7,11 +7,6 @@ export const Login = (): JSX.Element => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed = (errorInfo: unknown) => {
-    // TODO: Improve types.
-    console.log('Failed:', errorInfo);
-  };
-
   return (
     <Fragment>
       <header>
@@ -19,12 +14,7 @@ export const Login = (): JSX.Element => {
       </header>
 
       <main>
-        <Form
-          layout="vertical"
-          name="basic"
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
+        <Form layout="vertical" name="basic" onFinish={onFinish}>
           <Form.Item
             label="Username"
             name="username"
