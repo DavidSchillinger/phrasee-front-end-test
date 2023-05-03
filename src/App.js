@@ -19,7 +19,7 @@ const App = () => {
       </header>
       <main>
         <Form
-          layout={'vertical'}
+          layout="vertical"
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
