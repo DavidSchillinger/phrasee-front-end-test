@@ -2,9 +2,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import { router } from './router';
 import { user } from './user';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { patients } from './patients';
 
 export const store = configureStore({
-  reducer: { user, router },
+  reducer: { user, router, patients },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
