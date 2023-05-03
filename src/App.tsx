@@ -4,11 +4,11 @@ import { Form, Input, Button, Checkbox } from 'antd';
 
 
 const App = () => {
-  const onFinish = values => {
+  const onFinish = (values: unknown) => { // TODO: Improve types.
     console.log('Success:', values);
   };
 
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo: unknown) => { // TODO: Improve types.
     console.log('Failed:', errorInfo);
   };
 
