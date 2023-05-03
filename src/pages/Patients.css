@@ -1,0 +1,12 @@
+.patient-level + .patient-level, .patient + .patient {
+    margin-top: 1rem;
+}
+
+.patient-level .level-title {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.patient {
+    padding: 1.25rem 1rem;
+}

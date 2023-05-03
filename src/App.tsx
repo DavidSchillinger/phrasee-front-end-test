@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
 import 'antd/dist/antd.css';
 import { useRootSelector } from './store';
-import { Login } from './pages/Login';
-import { Patients } from './pages/Patients';
+import { LoginRoute } from './pages/Login';
+import { PatientsRoute } from './pages/Patients';
 
 const Router = (): JSX.Element => {
   const route = useRootSelector((state) => state.router.route);
 
   switch (route) {
     case 'login':
-      return <Login />;
+      return <LoginRoute />;
     case 'patients':
-      return <Patients />;
+      return <PatientsRoute />;
   }
 };
 

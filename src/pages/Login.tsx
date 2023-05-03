@@ -7,7 +7,7 @@ import { requiredPasswordRule, requiredUsernameRule } from './form-rules';
 type AntdStore = { [key: string]: any }; // Antd doesn't seem to export this.
 type FormSchema = { username: string; password: string };
 
-export const Login = (): JSX.Element => {
+export const LoginRoute = (): JSX.Element => {
   const dispatch = useRootDispatch();
 
   const onFinish = useCallback(
@@ -19,31 +19,33 @@ export const Login = (): JSX.Element => {
   );
 
   return (
-    <Form layout="vertical" name="basic" onFinish={onFinish}>
-      <Form.Item
-        label="Username"
-        name="username"
-        rules={[requiredUsernameRule]}
-      >
-        <Input size="large" />
-      </Form.Item>
+    <div className="container card">
+      <Form layout="vertical" name="basic" onFinish={onFinish}>
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[requiredUsernameRule]}
+        >
+          <Input size="large" />
+        </Form.Item>
 
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[requiredPasswordRule]}
-      >
-        <Input.Password size="large" />
-      </Form.Item>
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[requiredPasswordRule]}
+        >
+          <Input.Password size="large" />
+        </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" size="large">
-          Log in
-        </Button>
-      </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" size="large">
+            Log in
+          </Button>
+        </Form.Item>
 
-      <Status />
-    </Form>
+        <Status />
+      </Form>
+    </div>
   );
 };
 

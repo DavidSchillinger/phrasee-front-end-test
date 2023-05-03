@@ -3,20 +3,22 @@ import axios from 'axios';
 import { RootState } from './index';
 import { parseISO } from 'date-fns';
 
+export type PatientType = 'a_level' | 'c_level' | 'd_level';
+
 type ApiPatient = {
   _id: string;
   name: string;
-  type: string;
+  type: PatientType;
   joined: string; // ISO8601
   hospital_id: string;
   last_visit_date: string; // ISO8601
   is_completed: false | { [key: string]: unknown };
 };
 
-type Patient = {
+export type Patient = {
   id: string;
   name: string;
-  type: string;
+  type: PatientType;
   joined: Date;
   lastVisit: Date;
   isCompleted: boolean;
