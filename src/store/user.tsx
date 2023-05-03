@@ -1,6 +1,6 @@
 import { ThunkAction } from '@reduxjs/toolkit';
 import axios, { isAxiosError } from 'axios';
-import { RootState } from './store';
+import { RootState } from './index';
 import { navigateToPatients, RouterActions } from './router';
 
 type Initial = { token: null; status: 'initial' };
