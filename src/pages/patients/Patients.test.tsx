@@ -18,7 +18,7 @@ describe('PatientsRoute', () => {
   it('should display the correct content depending on fetch status', () => {
     useRootSelectorSpy.mockReturnValue({ status: 'loading' });
     const { getByText, queryByText, rerender } = render(<PatientsRoute />);
-    expect(getByText('Loading patients…')).toBeVisible();
+    expect(getByText('Loading patients...')).toBeVisible();
     expect(queryByText('Patients:')).toBe(null);
 
     useRootSelectorSpy.mockReturnValue({ status: 'failure' });
@@ -85,7 +85,7 @@ describe('Patients', () => {
 
     const patients = getAllByTestId('patient-details');
     expect(patients[0]).toHaveTextContent('Patient B');
-    expect(patients[0]).toHaveTextContent('Patient C');
-    expect(patients[0]).toHaveTextContent('Patient A');
+    expect(patients[1]).toHaveTextContent('Patient C');
+    expect(patients[2]).toHaveTextContent('Patient A');
   });
 });
