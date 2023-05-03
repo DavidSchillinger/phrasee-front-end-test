@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <header>
-        <img src="./images/dhg_whole.png" />
+        <img alt="Digital Hospital Global logo" src="/images/dhg_whole.png" />
       </header>
       <main>
         <Form
