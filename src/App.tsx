@@ -1,55 +1,18 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Form, Input, Button } from 'antd';
+import { useRootSelector } from './store';
+import { Login } from './pages/Login';
+import { Patients } from './pages/Patients';
 
-const App = () => {
-  const onFinish = (values: unknown) => {
-    // TODO: Improve types.
-    console.log('Success:', values);
-  };
+const App = (): JSX.Element => {
+  const route = useRootSelector((state) => state.router.route);
 
-  const onFinishFailed = (errorInfo: unknown) => {
-    // TODO: Improve types.
-    console.log('Failed:', errorInfo);
-  };
-
-  return (
-    <>
-      <header>
-        <img alt="Digital Hospital Global logo" src="/images/dhg_whole.png" />
-      </header>
-      <main>
-        <Form
-          layout="vertical"
-          name="basic"
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[{ required: true, message: 'Please provide a username!' }]}
-          >
-            <Input size="large" />
-          </Form.Item>
-
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: 'Please provide a password!' }]}
-          >
-            <Input.Password size="large" />
-          </Form.Item>
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit" size="large">
-              Log in
-            </Button>
-          </Form.Item>
-        </Form>
-      </main>
-    </>
-  );
+  switch (route) {
+    case 'login':
+      return <Login />;
+    case 'patients':
+      return <Patients />;
+  }
 };
 
 export default App;
