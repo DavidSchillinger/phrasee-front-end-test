@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Button, Form, Input } from 'antd';
 import { useRootDispatch, useRootSelector } from '../store';
 import { loginUser } from '../user';
@@ -18,39 +18,31 @@ export const Login = (): JSX.Element => {
   );
 
   return (
-    <Fragment>
-      <header>
-        <img alt="Digital Hospital Global logo" src="/images/dhg_whole.png" />
-      </header>
+    <Form layout="vertical" name="basic" onFinish={onFinish}>
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please provide a username!' }]}
+      >
+        <Input size="large" />
+      </Form.Item>
 
-      <main>
-        <Form layout="vertical" name="basic" onFinish={onFinish}>
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[{ required: true, message: 'Please provide a username!' }]}
-          >
-            <Input size="large" />
-          </Form.Item>
+      <Form.Item
+        label="Password"
+        name="password"
+        rules={[{ required: true, message: 'Please provide a password!' }]}
+      >
+        <Input.Password size="large" />
+      </Form.Item>
 
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: 'Please provide a password!' }]}
-          >
-            <Input.Password size="large" />
-          </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" size="large">
+          Log in
+        </Button>
+      </Form.Item>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" size="large">
-              Log in
-            </Button>
-          </Form.Item>
-
-          <Status />
-        </Form>
-      </main>
-    </Fragment>
+      <Status />
+    </Form>
   );
 };
 
