@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { Button, Form, Input } from 'antd';
 import { useRootDispatch, useRootSelector } from '../store';
 import { loginUser } from '../user';
+import { requiredPasswordRule, requiredUsernameRule } from './form-rules';
 
 type AntdStore = { [key: string]: any }; // Antd doesn't seem to export this.
 type FormSchema = { username: string; password: string };
@@ -22,7 +23,7 @@ export const Login = (): JSX.Element => {
       <Form.Item
         label="Username"
         name="username"
-        rules={[{ required: true, message: 'Please provide a username!' }]}
+        rules={[requiredUsernameRule]}
       >
         <Input size="large" />
       </Form.Item>
@@ -30,7 +31,7 @@ export const Login = (): JSX.Element => {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Please provide a password!' }]}
+        rules={[requiredPasswordRule]}
       >
         <Input.Password size="large" />
       </Form.Item>
