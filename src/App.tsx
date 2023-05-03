@@ -2,13 +2,14 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 
-
 const App = () => {
-  const onFinish = (values: unknown) => { // TODO: Improve types.
+  const onFinish = (values: unknown) => {
+    // TODO: Improve types.
     console.log('Success:', values);
   };
 
-  const onFinishFailed = (errorInfo: unknown) => { // TODO: Improve types.
+  const onFinishFailed = (errorInfo: unknown) => {
+    // TODO: Improve types.
     console.log('Failed:', errorInfo);
   };
 
@@ -25,22 +26,12 @@ const App = () => {
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
-          <Form.Item
-            label="Username"
-            name="username"
-          >
-            <Input
-              size="large"
-            />
+          <Form.Item label="Username" name="username">
+            <Input size="large" />
           </Form.Item>
 
-          <Form.Item
-            label="Password"
-            name="password"
-          >
-            <Input.Password
-              size="large"
-            />
+          <Form.Item label="Password" name="password">
+            <Input.Password size="large" />
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked">
@@ -52,17 +43,16 @@ const App = () => {
               type="primary"
               htmlType="submit"
               size="large"
-              disabled={1>0}
+              disabled={1 > 0}
             >
               Log in
             </Button>
           </Form.Item>
         </Form>
       </main>
-      <footer>
-      </footer>
+      <footer></footer>
     </>
   );
-}
+};
 
 export default App;
