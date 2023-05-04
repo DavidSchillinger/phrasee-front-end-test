@@ -25,8 +25,15 @@ img {
 }
 
 main {
+  padding: 50px;
+}
+
+.container {
   width: 500px;
-  margin: 50px auto;
+  margin: 0 auto;
+}
+
+.card {
   padding: 50px;
   background: #f9f9f9;
   border-radius: 10px;

@@ -2,14 +2,27 @@
   "name": "tech-test-snr-fe",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "yarn@1.22.19",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^16.0.0",
+    "@types/ramda": "^0.29.1",
+    "@types/react": "^16.0.0",
+    "@types/react-dom": "^16.0.0",
     "antd": "^4.5.4",
+    "axios": "^1.4.0",
+    "date-fns": "^2.30.0",
+    "prettier": "^2.8.8",
+    "ramda": "^0.29.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-redux": "^8.0.5",
+    "react-scripts": "3.4.3",
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +44,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "clearMocks": true,
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css)$": "<rootDir>/CSSStub.js"
+    }
   }
 }
