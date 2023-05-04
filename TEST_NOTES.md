@@ -40,3 +40,4 @@
 - CI/CD configuration is out-of-scope for this test
 - Sorting `last_visit_date` ascending is meant literally, i.e. the _oldest_ comes first
   - Last-visited data is more commonly (in my experience) sorted latest-first
+- In addition to sorting the patients, sorting patient type/level groups alphabetically is acceptable
